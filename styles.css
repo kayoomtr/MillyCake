@@ -1,0 +1,291 @@
+:root {
+  --lilas-fundo: #f6effa;
+  --lilas-suave: #e7d3f2;
+  --lilas-medio: #b98fd1;
+  --lilas-forte: #6b3fa0;
+  --roxo-texto: #4a2e63;
+  --rosa-detalhe: #f0b8d4;
+  --branco: #fffdfe;
+  --sombra: rgba(107, 63, 160, 0.18);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--roxo-texto);
+  background: var(--lilas-fundo);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+  color: var(--lilas-forte);
+}
+
+.oculta { display: none !important; }
+
+/* ---------- TELA DE ABERTURA ---------- */
+.tela-abertura {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 35%, var(--lilas-suave), var(--lilas-fundo) 70%);
+  overflow: hidden;
+}
+
+.abertura-conteudo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.botao-logo {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  transition: transform 0.35s ease;
+  animation: respirar 3.6s ease-in-out infinite;
+}
+
+.botao-logo:hover { transform: scale(1.04); }
+.botao-logo:active { transform: scale(0.97); }
+.botao-logo:focus-visible { outline: 3px solid var(--lilas-forte); outline-offset: 6px; }
+
+@keyframes respirar {
+  0%, 100% { filter: drop-shadow(0 10px 30px var(--sombra)); }
+  50% { filter: drop-shadow(0 18px 46px var(--sombra)); }
+}
+
+.logo-img {
+  width: min(78vw, 420px);
+  display: block;
+  border-radius: 50%;
+}
+
+.abertura-dica {
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: var(--lilas-forte);
+  opacity: 0.75;
+}
+
+.brilho {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--rosa-detalhe);
+  filter: blur(60px);
+  opacity: 0.35;
+  z-index: 1;
+}
+.brilho-1 { width: 260px; height: 260px; top: 8%; left: 10%; }
+.brilho-2 { width: 220px; height: 220px; bottom: 6%; right: 8%; background: var(--lilas-medio); }
+
+/* transição suave para o cardápio */
+.tela-abertura.saindo {
+  animation: sumir 0.5s ease forwards;
+}
+@keyframes sumir {
+  to { opacity: 0; transform: scale(0.98); }
+}
+
+.tela-cardapio.entrando {
+  animation: surgir 0.55s ease forwards;
+}
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- CABEÇALHO DO CARDÁPIO ---------- */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px clamp(20px, 6vw, 64px) 18px;
+}
+
+.logo-mini {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px var(--sombra);
+}
+
+.cabecalho-texto h1 {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.cabecalho-texto p {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--lilas-medio);
+  margin-top: 2px;
+}
+
+/* ---------- CARDÁPIO ---------- */
+.cardapio {
+  padding: 10px clamp(20px, 6vw, 64px) 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grupo-produtos { margin-bottom: 46px; }
+
+.grupo-titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+  border-bottom: 2px dashed var(--lilas-suave);
+  padding-bottom: 10px;
+}
+
+.grupo-titulo h2 { font-size: 1.9rem; }
+
+.grupo-preco {
+  font-size: 0.85rem;
+  color: var(--lilas-medio);
+  font-weight: 600;
+}
+
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card-produto {
+  background: var(--branco);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px var(--sombra);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px var(--sombra);
+}
+
+.card-imagem {
+  background: linear-gradient(160deg, var(--lilas-suave), var(--branco));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.card-imagem img {
+  width: 100%;
+  max-width: 190px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.card-info {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.card-info h3 {
+  font-size: 1.4rem;
+  line-height: 1.1;
+}
+
+.card-info p {
+  font-size: 0.88rem;
+  color: var(--roxo-texto);
+  opacity: 0.85;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.card-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.card-preco {
+  font-weight: 700;
+  color: var(--lilas-forte);
+  font-size: 1.05rem;
+}
+
+.botao-pedir {
+  border: none;
+  background: var(--lilas-forte);
+  color: var(--branco);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.botao-pedir:hover { background: var(--lilas-medio); transform: translateY(-1px); }
+.botao-pedir:focus-visible { outline: 3px solid var(--lilas-forte); outline-offset: 3px; }
+
+/* ---------- RODAPÉ E BOTÃO FLUTUANTE ---------- */
+.rodape {
+  text-align: center;
+  padding: 10px 0 90px;
+  font-size: 0.85rem;
+  color: var(--lilas-medio);
+}
+
+.botao-whatsapp-flutuante {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--lilas-forte);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px var(--sombra);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.botao-whatsapp-flutuante:hover { transform: scale(1.06); background: var(--lilas-medio); }
+.botao-whatsapp-flutuante:focus-visible { outline: 3px solid var(--roxo-texto); outline-offset: 4px; }
+
+.icone-whatsapp { width: 26px; height: 26px; fill: var(--branco); }
+
+/* ---------- ACESSIBILIDADE / RESPONSIVO ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .botao-logo, .tela-abertura.saindo, .tela-cardapio.entrando { animation: none; }
+}
+
+@media (max-width: 480px) {
+  .cabecalho { padding-top: 20px; }
+  .cabecalho-texto h1 { font-size: 1.6rem; }
+  .grade-produtos { grid-template-columns: 1fr 1fr; }
+  .card-imagem { padding: 12px; }
+}
+
+@media (max-width: 360px) {
+  .grade-produtos { grid-template-columns: 1fr; }
+}
