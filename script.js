@@ -1,8 +1,5 @@
-// ======= CONFIGURAÇÃO =======
-// Troque pelo número de WhatsApp da MillyCake (formato: DDI + DDD + número, só dígitos)
-const NUMERO_WHATSAPP = "5500000000000";
+const NUMERO_WHATSAPP = "5524993232877";
 
-// ======= TRANSIÇÃO ENTRE TELAS =======
 const telaAbertura = document.getElementById("tela-abertura");
 const telaCardapio = document.getElementById("tela-cardapio");
 const botaoLogo = document.getElementById("botao-logo");
@@ -17,7 +14,7 @@ botaoLogo.addEventListener("click", () => {
   }, 480);
 });
 
-// ======= REDIRECIONAMENTO PARA O WHATSAPP =======
+// WHATSAPP
 function abrirWhatsapp(mensagem) {
   const texto = encodeURIComponent(mensagem);
   window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${texto}`, "_blank");
