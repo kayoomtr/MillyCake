@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MillyCake Doceria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles-alt.css">
+</head>
+<body>
+
+  <!-- TELA 1 — ABERTURA -->
+  <section id="tela-abertura" class="tela-abertura">
+    <div class="abertura-conteudo">
+      <button id="botao-logo" class="botao-logo" aria-label="Entrar no cardápio da MillyCake">
+        <img src="images/logo.png" alt="MillyCake Doceria" class="logo-img">
+      </button>
+      <p class="abertura-dica">Clique para ver os produtos!</p>
+    </div>
+    <div class="brilho brilho-1"></div>
+    <div class="brilho brilho-2"></div>
+  </section>
+
+  <!-- TELA 2 — CARDÁPIO -->
+  <section id="tela-cardapio" class="tela-cardapio oculta">
+
+    <header class="cabecalho">
+      <img src="images/logo.png" alt="MillyCake" class="logo-mini">
+      <div class="cabecalho-texto">
+        <h1>MillyCake</h1>
+        <p>Doceria</p>
+      </div>
+    </header>
+
+    <main class="cardapio">
+
+      <section class="grupo-produtos">
+        <div class="grupo-titulo">
+          <h2>Tortinhas</h2>
+          <span class="grupo-preco">R$ 10,00 cada</span>
+        </div>
+        <div class="grade-produtos">
+
+          <article class="card-produto">
+            <div class="card-imagem">
+              <img src="images/tortinha-maracuja.png" alt="Tortinha de maracujá">
+            </div>
+            <div class="card-info">
+              <h3>Maracujá</h3>
+              <p>Creme suave de maracujá com crocante massa caseira.</p>
+              <div class="card-rodape">
+                <span class="card-preco">R$ 10,00</span>
+                <button class="botao-pedir" data-produto="Tortinha de Maracujá" data-preco="R$ 10,00">Pedir</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto">
+            <div class="card-imagem">
+              <img src="images/tortinha-morango.png" alt="Tortinha de morango">
+            </div>
+            <div class="card-info">
+              <h3>Morango</h3>
+              <p>Creme especial e morangos frescos, com muito sabor.</p>
+              <div class="card-rodape">
+                <span class="card-preco">R$ 10,00</span>
+                <button class="botao-pedir" data-produto="Tortinha de Morango" data-preco="R$ 10,00">Pedir</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto">
+            <div class="card-imagem">
+              <img src="images/tortinha-limao.png" alt="Tortinha de limão">
+            </div>
+            <div class="card-info">
+              <h3>Limão</h3>
+              <p>Creme cítrico e refrescante, com toque especial de limão.</p>
+              <div class="card-rodape">
+                <span class="card-preco">R$ 10,00</span>
+                <button class="botao-pedir" data-produto="Tortinha de Limão" data-preco="R$ 10,00">Pedir</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="grupo-produtos">
+        <div class="grupo-titulo">
+          <h2>Bolos de Pote</h2>
+        </div>
+        <div class="grade-produtos">
+
+          <article class="card-produto">
+            <div class="card-imagem">
+              <img src="images/bolo-choco-maracuja.png" alt="Bolo de pote de chocolate com creme de maracujá">
+            </div>
+            <div class="card-info">
+              <h3>Chocolate com Creme de Maracujá</h3>
+              <p>Camadas de bolo de chocolate, creme de maracujá e cobertura de chocolate.</p>
+              <div class="card-rodape">
+                <span class="card-preco">R$ 13,00</span>
+                <button class="botao-pedir" data-produto="Bolo de Pote Chocolate com Creme de Maracujá" data-preco="R$ 13,00">Pedir</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-produto">
+            <div class="card-imagem">
+              <img src="images/bolo-ninho-morango.png" alt="Bolo de pote de ninho com geleia de morango">
+            </div>
+            <div class="card-info">
+              <h3>Ninho com Geleia de Morango</h3>
+              <p>Camadas de bolo, creme de ninho e geleia de morango.</p>
+              <div class="card-rodape">
+                <span class="card-preco">R$ 12,00</span>
+                <button class="botao-pedir" data-produto="Bolo de Pote Ninho com Geleia de Morango" data-preco="R$ 12,00">Pedir</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="rodape">
+      <p>Feito por Kayo - MillyCake</p>
+    </footer>
+
+    <button id="botao-whatsapp-flutuante" class="botao-whatsapp-flutuante" aria-label="Falar no WhatsApp">
+      <svg viewBox="0 0 24 24" class="icone-whatsapp"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.2 16.9L2 22l5.3-1.4a8.9 8.9 0 0 0 12.8-8A8.9 8.9 0 0 0 17.6 6.3ZM12 20.2a7.5 7.5 0 0 1-3.8-1l-.3-.2-2.8.8.8-2.7-.2-.3a7.5 7.5 0 1 1 6.3 3.4Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.3-.3.2-.3a.5.5 0 0 0 0-.5c-.1-.1-.5-1.3-.7-1.7s-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.7 2.7 0 0 0-.8 2 4.7 4.7 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c1.5.6 1.5.4 1.8.4a1.5 1.5 0 0 0 1-.7 1.2 1.2 0 0 0 .1-.7c0-.1-.2-.2-.4-.3Z"/></svg>
+    </button>
+
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
